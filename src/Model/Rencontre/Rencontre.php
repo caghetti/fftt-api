@@ -36,7 +36,7 @@ final class Rencontre
     private $lien;
     /**
      * @readonly
-     * @var \DateTime
+     * @var \DateTime|null
      */
     private $datePrevue;
     /**
@@ -44,7 +44,7 @@ final class Rencontre
      * @var \DateTime|null
      */
     private $dateReelle;
-    public function __construct(string $libelle, string $nomEquipeA, string $nomEquipeB, int $scoreEquipeA, int $scoreEquipeB, string $lien, \DateTime $datePrevue, ?\DateTime $dateReelle)
+    public function __construct(string $libelle, string $nomEquipeA, string $nomEquipeB, int $scoreEquipeA, int $scoreEquipeB, string $lien, ?\DateTime $datePrevue, ?\DateTime $dateReelle)
     {
         $this->libelle = $libelle;
         $this->nomEquipeA = $nomEquipeA;
@@ -85,7 +85,7 @@ final class Rencontre
         return $this->lien;
     }
 
-    public function getDatePrevue(): \DateTime
+    public function getDatePrevue(): ?\DateTime
     {
         return $this->datePrevue;
     }

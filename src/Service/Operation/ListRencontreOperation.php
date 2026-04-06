@@ -38,11 +38,12 @@ final class ListRencontreOperation
                 /** @var string $nomEquipeB */
                 $nomEquipeB = is_array($equipeB) ? '' : $equipeB;
 
-                /** @var \DateTime $datePrevue */
-                $datePrevue = \DateTime::createFromFormat('d/m/Y', $dataRencontre['dateprevue']);
-
                 /** @var \DateTime|null $dateReelle */
                 $dateReelle = empty($dataRencontre['datereelle']) ? null : \DateTime::createFromFormat('d/m/Y', $dataRencontre['datereelle']);
+
+                $datePrevueParsed = \DateTime::createFromFormat('d/m/Y', $dataRencontre['dateprevue']);
+                /** @var \DateTime|null $datePrevue */
+                $datePrevue = $datePrevueParsed !== false ? $datePrevueParsed : $dateReelle;
 
                 $result[] = new Rencontre(
                     $dataRencontre['libelle'],
