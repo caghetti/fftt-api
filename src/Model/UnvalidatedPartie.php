@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Alamirault\FFTTApi\Model;
+namespace Caghetti\FFTTApi\Model;
 
 final class UnvalidatedPartie
 {

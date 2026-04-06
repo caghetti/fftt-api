@@ -1,20 +1,20 @@
 <?php declare(strict_types=1);
 
-namespace Alamirault\FFTTApi\Service\Operation;
+namespace Caghetti\FFTTApi\Service\Operation;
 
-use Alamirault\FFTTApi\Model\Actualite;
-use Alamirault\FFTTApi\Service\FFTTClientInterface;
+use Caghetti\FFTTApi\Model\Actualite;
+use Caghetti\FFTTApi\Service\FFTTClientInterface;
 
 final class ListActualiteOperation
 {
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Service\FFTTClientInterface
+     * @var \Caghetti\FFTTApi\Service\FFTTClientInterface
      */
     private $FFTTClient;
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Service\Operation\ArrayWrapper
+     * @var \Caghetti\FFTTApi\Service\Operation\ArrayWrapper
      */
     private $arrayWrapper;
     public function __construct(FFTTClientInterface $FFTTClient, ArrayWrapper $arrayWrapper)

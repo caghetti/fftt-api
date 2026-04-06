@@ -1,22 +1,22 @@
 <?php declare(strict_types=1);
 
-namespace Alamirault\FFTTApi\Service\Operation;
+namespace Caghetti\FFTTApi\Service\Operation;
 
-use Alamirault\FFTTApi\Exception\ClubNotFoundException;
-use Alamirault\FFTTApi\Model\ClubDetails;
-use Alamirault\FFTTApi\Model\Equipe;
-use Alamirault\FFTTApi\Service\FFTTClientInterface;
+use Caghetti\FFTTApi\Exception\ClubNotFoundException;
+use Caghetti\FFTTApi\Model\ClubDetails;
+use Caghetti\FFTTApi\Model\Equipe;
+use Caghetti\FFTTApi\Service\FFTTClientInterface;
 
 final class RetrieveClubDetailsOperation
 {
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Service\FFTTClientInterface
+     * @var \Caghetti\FFTTApi\Service\FFTTClientInterface
      */
     private $client;
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Service\Operation\ListClubOperation
+     * @var \Caghetti\FFTTApi\Service\Operation\ListClubOperation
      */
     private $listClubOperation;
     public function __construct(FFTTClientInterface $client, ListClubOperation $listClubOperation)

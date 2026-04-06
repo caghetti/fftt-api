@@ -1,16 +1,16 @@
 <?php declare(strict_types=1);
 
-namespace Alamirault\FFTTApi\Service\Operation;
+namespace Caghetti\FFTTApi\Service\Operation;
 
-use Alamirault\FFTTApi\Model\Equipe;
-use Alamirault\FFTTApi\Model\Rencontre\Rencontre;
-use Alamirault\FFTTApi\Service\FFTTClientInterface;
+use Caghetti\FFTTApi\Model\Equipe;
+use Caghetti\FFTTApi\Model\Rencontre\Rencontre;
+use Caghetti\FFTTApi\Service\FFTTClientInterface;
 
 final class ListRencontreOperation
 {
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Service\FFTTClientInterface
+     * @var \Caghetti\FFTTApi\Service\FFTTClientInterface
      */
     private $client;
     public function __construct(FFTTClientInterface $client)

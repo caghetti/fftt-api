@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Alamirault\FFTTApi\Service;
+namespace Caghetti\FFTTApi\Service;
 
 final class NomPrenomExtractor implements NomPrenomExtractorInterface
 {

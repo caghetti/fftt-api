@@ -1,10 +1,10 @@
 <?php
 
-namespace Alamirault\FFTTApi\Service;
+namespace Caghetti\FFTTApi\Service;
 
-use Alamirault\FFTTApi\Exception\InternalServerErrorException;
-use Alamirault\FFTTApi\Exception\InvalidRequestException;
-use Alamirault\FFTTApi\Exception\InvalidResponseException;
+use Caghetti\FFTTApi\Exception\InternalServerErrorException;
+use Caghetti\FFTTApi\Exception\InvalidRequestException;
+use Caghetti\FFTTApi\Exception\InvalidResponseException;
 
 interface FFTTClientInterface
 {

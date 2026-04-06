@@ -1,42 +1,42 @@
 <?php declare(strict_types=1);
 
-namespace Alamirault\FFTTApi\Service;
+namespace Caghetti\FFTTApi\Service;
 
-use Alamirault\FFTTApi\Model\Actualite;
-use Alamirault\FFTTApi\Model\Classement;
-use Alamirault\FFTTApi\Model\Club;
-use Alamirault\FFTTApi\Model\ClubDetails;
-use Alamirault\FFTTApi\Model\Enums\TypeEpreuveEnum;
-use Alamirault\FFTTApi\Model\Epreuve;
-use Alamirault\FFTTApi\Model\Equipe;
-use Alamirault\FFTTApi\Model\EquipePoule;
-use Alamirault\FFTTApi\Model\Factory\ClubFactory;
-use Alamirault\FFTTApi\Model\Factory\RencontreDetailsFactory;
-use Alamirault\FFTTApi\Model\Historique;
-use Alamirault\FFTTApi\Model\Joueur;
-use Alamirault\FFTTApi\Model\JoueurDetails;
-use Alamirault\FFTTApi\Model\Organisme;
-use Alamirault\FFTTApi\Model\Partie;
-use Alamirault\FFTTApi\Model\Rencontre\Rencontre;
-use Alamirault\FFTTApi\Model\Rencontre\RencontreDetails;
-use Alamirault\FFTTApi\Model\UnvalidatedPartie;
-use Alamirault\FFTTApi\Model\VirtualPoints;
-use Alamirault\FFTTApi\Service\Operation\ArrayWrapper;
-use Alamirault\FFTTApi\Service\Operation\ListActualiteOperation;
-use Alamirault\FFTTApi\Service\Operation\ListClubOperation;
-use Alamirault\FFTTApi\Service\Operation\ListEpreuveOperation;
-use Alamirault\FFTTApi\Service\Operation\ListEquipeOperation;
-use Alamirault\FFTTApi\Service\Operation\ListEquipePouleOperation;
-use Alamirault\FFTTApi\Service\Operation\ListHistoriqueOperation;
-use Alamirault\FFTTApi\Service\Operation\ListJoueurOperation;
-use Alamirault\FFTTApi\Service\Operation\ListOrganismeOperation;
-use Alamirault\FFTTApi\Service\Operation\ListPartieOperation;
-use Alamirault\FFTTApi\Service\Operation\ListRencontreOperation;
-use Alamirault\FFTTApi\Service\Operation\RetrieveClassementOperation;
-use Alamirault\FFTTApi\Service\Operation\RetrieveClubDetailsOperation;
-use Alamirault\FFTTApi\Service\Operation\RetrieveJoueurDetailsOperation;
-use Alamirault\FFTTApi\Service\Operation\RetrieveRencontreDetailsOperation;
-use Alamirault\FFTTApi\Service\Operation\RetrieveVirtualPointsOperation;
+use Caghetti\FFTTApi\Model\Actualite;
+use Caghetti\FFTTApi\Model\Classement;
+use Caghetti\FFTTApi\Model\Club;
+use Caghetti\FFTTApi\Model\ClubDetails;
+use Caghetti\FFTTApi\Model\Enums\TypeEpreuveEnum;
+use Caghetti\FFTTApi\Model\Epreuve;
+use Caghetti\FFTTApi\Model\Equipe;
+use Caghetti\FFTTApi\Model\EquipePoule;
+use Caghetti\FFTTApi\Model\Factory\ClubFactory;
+use Caghetti\FFTTApi\Model\Factory\RencontreDetailsFactory;
+use Caghetti\FFTTApi\Model\Historique;
+use Caghetti\FFTTApi\Model\Joueur;
+use Caghetti\FFTTApi\Model\JoueurDetails;
+use Caghetti\FFTTApi\Model\Organisme;
+use Caghetti\FFTTApi\Model\Partie;
+use Caghetti\FFTTApi\Model\Rencontre\Rencontre;
+use Caghetti\FFTTApi\Model\Rencontre\RencontreDetails;
+use Caghetti\FFTTApi\Model\UnvalidatedPartie;
+use Caghetti\FFTTApi\Model\VirtualPoints;
+use Caghetti\FFTTApi\Service\Operation\ArrayWrapper;
+use Caghetti\FFTTApi\Service\Operation\ListActualiteOperation;
+use Caghetti\FFTTApi\Service\Operation\ListClubOperation;
+use Caghetti\FFTTApi\Service\Operation\ListEpreuveOperation;
+use Caghetti\FFTTApi\Service\Operation\ListEquipeOperation;
+use Caghetti\FFTTApi\Service\Operation\ListEquipePouleOperation;
+use Caghetti\FFTTApi\Service\Operation\ListHistoriqueOperation;
+use Caghetti\FFTTApi\Service\Operation\ListJoueurOperation;
+use Caghetti\FFTTApi\Service\Operation\ListOrganismeOperation;
+use Caghetti\FFTTApi\Service\Operation\ListPartieOperation;
+use Caghetti\FFTTApi\Service\Operation\ListRencontreOperation;
+use Caghetti\FFTTApi\Service\Operation\RetrieveClassementOperation;
+use Caghetti\FFTTApi\Service\Operation\RetrieveClubDetailsOperation;
+use Caghetti\FFTTApi\Service\Operation\RetrieveJoueurDetailsOperation;
+use Caghetti\FFTTApi\Service\Operation\RetrieveRencontreDetailsOperation;
+use Caghetti\FFTTApi\Service\Operation\RetrieveVirtualPointsOperation;
 use GuzzleHttp\Client;
 
 /**
@@ -46,63 +46,63 @@ use GuzzleHttp\Client;
 final class FFTTApi
 {
     /**
-     * @var \Alamirault\FFTTApi\Service\Operation\ListOrganismeOperation
+     * @var \Caghetti\FFTTApi\Service\Operation\ListOrganismeOperation
      */
     private $listOrganismeOperation;
     /**
-     * @var \Alamirault\FFTTApi\Service\Operation\ListClubOperation
+     * @var \Caghetti\FFTTApi\Service\Operation\ListClubOperation
      */
     private $listClubOperation;
     /**
-     * @var \Alamirault\FFTTApi\Service\Operation\RetrieveClubDetailsOperation
+     * @var \Caghetti\FFTTApi\Service\Operation\RetrieveClubDetailsOperation
      */
     private $retrieveClubDetailsOperation;
     /**
-     * @var \Alamirault\FFTTApi\Service\Operation\ListJoueurOperation
+     * @var \Caghetti\FFTTApi\Service\Operation\ListJoueurOperation
      */
     private $listJoueurOperation;
     /**
-     * @var \Alamirault\FFTTApi\Service\Operation\RetrieveJoueurDetailsOperation
+     * @var \Caghetti\FFTTApi\Service\Operation\RetrieveJoueurDetailsOperation
      */
     private $retrieveJoueurDetailsOperation;
     /**
-     * @var \Alamirault\FFTTApi\Service\Operation\RetrieveClassementOperation
+     * @var \Caghetti\FFTTApi\Service\Operation\RetrieveClassementOperation
      */
     private $retrieveClassementOperation;
     /**
-     * @var \Alamirault\FFTTApi\Service\Operation\ListHistoriqueOperation
+     * @var \Caghetti\FFTTApi\Service\Operation\ListHistoriqueOperation
      */
     private $listHistoriqueOperation;
     /**
-     * @var \Alamirault\FFTTApi\Service\Operation\ListPartieOperation
+     * @var \Caghetti\FFTTApi\Service\Operation\ListPartieOperation
      */
     private $listPartieOperation;
     /**
-     * @var \Alamirault\FFTTApi\Service\Operation\RetrieveVirtualPointsOperation
+     * @var \Caghetti\FFTTApi\Service\Operation\RetrieveVirtualPointsOperation
      */
     private $virtualPointsOperation;
     /**
-     * @var \Alamirault\FFTTApi\Service\Operation\ListEquipeOperation
+     * @var \Caghetti\FFTTApi\Service\Operation\ListEquipeOperation
      */
     private $listEquipeOperation;
     /**
-     * @var \Alamirault\FFTTApi\Service\Operation\ListEquipePouleOperation
+     * @var \Caghetti\FFTTApi\Service\Operation\ListEquipePouleOperation
      */
     private $listEquipePouleOperation;
     /**
-     * @var \Alamirault\FFTTApi\Service\Operation\ListRencontreOperation
+     * @var \Caghetti\FFTTApi\Service\Operation\ListRencontreOperation
      */
     private $listRencontreOperation;
     /**
-     * @var \Alamirault\FFTTApi\Service\Operation\RetrieveRencontreDetailsOperation
+     * @var \Caghetti\FFTTApi\Service\Operation\RetrieveRencontreDetailsOperation
      */
     private $retrieveRencontreDetailsOperation;
     /**
-     * @var \Alamirault\FFTTApi\Service\Operation\ListActualiteOperation
+     * @var \Caghetti\FFTTApi\Service\Operation\ListActualiteOperation
      */
     private $listActualiteOperation;
     /**
-     * @var \Alamirault\FFTTApi\Service\Operation\ListEpreuveOperation
+     * @var \Caghetti\FFTTApi\Service\Operation\ListEpreuveOperation
      */
     private $listEpreuveOperation;
 

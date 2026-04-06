@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Alamirault\FFTTApi\Service\Operation;
+namespace Caghetti\FFTTApi\Service\Operation;
 
 final class ArrayWrapper
 {

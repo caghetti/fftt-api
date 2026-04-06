@@ -1,5 +1,5 @@
 {
-    "name": "alamirault/fftt-api",
+    "name": "caghetti/fftt-api",
     "description": "SDK afin de consommer l'api FFTT",
     "keywords": [
         "fftt",
@@ -15,12 +15,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "Alamirault\\FFTTApi\\": "src"
+            "Caghetti\\FFTTApi\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Alamirault\\FFTTApi\\Tests\\": "tests"
+            "Caghetti\\FFTTApi\\Tests\\": "tests"
         }
     },
     "require": {

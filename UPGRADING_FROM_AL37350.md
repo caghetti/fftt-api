@@ -1,18 +1,18 @@
-# Migrer de al37350/fftt-api à alamirault/fftt-api
+# Migrer de al37350/fftt-api à caghetti/fftt-api
 
 
 L'ensemble du code à changé de namespace.
 
 ```php
 $api = new \FFTTApi\FFTTApi("identifiant", "password"); // Avant
-$api = new \Alamirault\FFTTApi\Service\FFTTApi("identifiant", "password"); // Maintenant
+$api = new \Caghetti\FFTTApi\Service\FFTTApi("identifiant", "password"); // Maintenant
 ```
 
 Les modèles sont toujours les mêmes mais ont aussi changé de namespace
 
 ```php
 use FFTTApi\Model\Rencontre; // Avant
-use Alamirault\FFTTApi\Model\Rencontre; // Maintenant
+use Caghetti\FFTTApi\Model\Rencontre; // Maintenant
 ```
 
 Changement des exceptions

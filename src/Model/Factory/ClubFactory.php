@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Alamirault\FFTTApi\Model\Factory;
+namespace Caghetti\FFTTApi\Model\Factory;
 
-use Alamirault\FFTTApi\Model\Club;
+use Caghetti\FFTTApi\Model\Club;
 
 final class ClubFactory
 {

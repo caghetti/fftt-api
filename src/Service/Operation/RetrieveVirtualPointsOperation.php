@@ -1,35 +1,35 @@
 <?php declare(strict_types=1);
 
-namespace Alamirault\FFTTApi\Service\Operation;
+namespace Caghetti\FFTTApi\Service\Operation;
 
-use Alamirault\FFTTApi\Exception\InvalidRequestException;
-use Alamirault\FFTTApi\Exception\InvalidResponseException;
-use Alamirault\FFTTApi\Exception\JoueurNotFoundException;
-use Alamirault\FFTTApi\Model\UnvalidatedPartie;
-use Alamirault\FFTTApi\Model\VirtualPoints;
-use Alamirault\FFTTApi\Service\PointCalculator;
+use Caghetti\FFTTApi\Exception\InvalidRequestException;
+use Caghetti\FFTTApi\Exception\InvalidResponseException;
+use Caghetti\FFTTApi\Exception\JoueurNotFoundException;
+use Caghetti\FFTTApi\Model\UnvalidatedPartie;
+use Caghetti\FFTTApi\Model\VirtualPoints;
+use Caghetti\FFTTApi\Service\PointCalculator;
 
 final class RetrieveVirtualPointsOperation
 {
     private const JOUR_DEBUT_MOIS_VIRTUEL = 5;
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Service\Operation\RetrieveClassementOperation
+     * @var \Caghetti\FFTTApi\Service\Operation\RetrieveClassementOperation
      */
     private $retrieveClassementOperation;
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Service\Operation\ListPartieOperation
+     * @var \Caghetti\FFTTApi\Service\Operation\ListPartieOperation
      */
     private $listPartieOperation;
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Service\Operation\ListJoueurOperation
+     * @var \Caghetti\FFTTApi\Service\Operation\ListJoueurOperation
      */
     private $listJoueurOperation;
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Service\PointCalculator
+     * @var \Caghetti\FFTTApi\Service\PointCalculator
      */
     private $pointCalculator;
     public function __construct(RetrieveClassementOperation $retrieveClassementOperation, ListPartieOperation $listPartieOperation, ListJoueurOperation $listJoueurOperation, PointCalculator $pointCalculator)

@@ -1,16 +1,16 @@
 <?php declare(strict_types=1);
 
-namespace Alamirault\FFTTApi\Service\Operation;
+namespace Caghetti\FFTTApi\Service\Operation;
 
-use Alamirault\FFTTApi\Exception\JoueurNotFoundException;
-use Alamirault\FFTTApi\Model\Classement;
-use Alamirault\FFTTApi\Service\FFTTClientInterface;
+use Caghetti\FFTTApi\Exception\JoueurNotFoundException;
+use Caghetti\FFTTApi\Model\Classement;
+use Caghetti\FFTTApi\Service\FFTTClientInterface;
 
 final class RetrieveClassementOperation
 {
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Service\FFTTClientInterface
+     * @var \Caghetti\FFTTApi\Service\FFTTClientInterface
      */
     private $client;
     public function __construct(FFTTClientInterface $client)

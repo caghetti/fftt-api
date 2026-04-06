@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Alamirault\FFTTApi\Model\Rencontre;
+namespace Caghetti\FFTTApi\Model\Rencontre;
 
 final class Rencontre
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Alamirault\FFTTApi\Service;
+namespace Caghetti\FFTTApi\Service;
 
 interface NomPrenomExtractorInterface
 {

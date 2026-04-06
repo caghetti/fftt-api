@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Alamirault\FFTTApi\Exception;
+namespace Caghetti\FFTTApi\Exception;
 
 final class ClubNotFoundException extends \Exception
 {

@@ -1,26 +1,26 @@
 <?php declare(strict_types=1);
 
-namespace Alamirault\FFTTApi\Service\Operation;
+namespace Caghetti\FFTTApi\Service\Operation;
 
-use Alamirault\FFTTApi\Model\Club;
-use Alamirault\FFTTApi\Model\Factory\ClubFactory;
-use Alamirault\FFTTApi\Service\FFTTClientInterface;
+use Caghetti\FFTTApi\Model\Club;
+use Caghetti\FFTTApi\Model\Factory\ClubFactory;
+use Caghetti\FFTTApi\Service\FFTTClientInterface;
 
 final class ListClubOperation
 {
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Service\FFTTClientInterface
+     * @var \Caghetti\FFTTApi\Service\FFTTClientInterface
      */
     private $client;
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Model\Factory\ClubFactory
+     * @var \Caghetti\FFTTApi\Model\Factory\ClubFactory
      */
     private $clubFactory;
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Service\Operation\ArrayWrapper
+     * @var \Caghetti\FFTTApi\Service\Operation\ArrayWrapper
      */
     private $arrayWrapper;
     public function __construct(FFTTClientInterface $client, ClubFactory $clubFactory, ArrayWrapper $arrayWrapper)

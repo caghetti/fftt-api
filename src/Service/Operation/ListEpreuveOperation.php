@@ -1,16 +1,16 @@
 <?php declare(strict_types=1);
 
-namespace Alamirault\FFTTApi\Service\Operation;
+namespace Caghetti\FFTTApi\Service\Operation;
 
-use Alamirault\FFTTApi\Model\Enums\TypeEpreuveEnum;
-use Alamirault\FFTTApi\Model\Epreuve;
-use Alamirault\FFTTApi\Service\FFTTClientInterface;
+use Caghetti\FFTTApi\Model\Enums\TypeEpreuveEnum;
+use Caghetti\FFTTApi\Model\Epreuve;
+use Caghetti\FFTTApi\Service\FFTTClientInterface;
 
 final class ListEpreuveOperation
 {
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Service\FFTTClientInterface
+     * @var \Caghetti\FFTTApi\Service\FFTTClientInterface
      */
     private $client;
     public function __construct(FFTTClientInterface $client)

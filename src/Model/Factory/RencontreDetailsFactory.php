@@ -1,13 +1,13 @@
 <?php declare(strict_types=1);
 
-namespace Alamirault\FFTTApi\Model\Factory;
+namespace Caghetti\FFTTApi\Model\Factory;
 
 use Accentuation\Accentuation;
-use Alamirault\FFTTApi\Model\Rencontre\Joueur;
-use Alamirault\FFTTApi\Model\Rencontre\Partie;
-use Alamirault\FFTTApi\Model\Rencontre\RencontreDetails;
-use Alamirault\FFTTApi\Service\NomPrenomExtractorInterface;
-use Alamirault\FFTTApi\Service\Operation\ListJoueurOperation;
+use Caghetti\FFTTApi\Model\Rencontre\Joueur;
+use Caghetti\FFTTApi\Model\Rencontre\Partie;
+use Caghetti\FFTTApi\Model\Rencontre\RencontreDetails;
+use Caghetti\FFTTApi\Service\NomPrenomExtractorInterface;
+use Caghetti\FFTTApi\Service\Operation\ListJoueurOperation;
 
 /**
  * @phpstan-type RawJoueur array<array{xja: string|null, xjb: string|null,xca: string|null,xcb: string|null}>
@@ -18,12 +18,12 @@ final class RencontreDetailsFactory
 {
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Service\NomPrenomExtractorInterface
+     * @var \Caghetti\FFTTApi\Service\NomPrenomExtractorInterface
      */
     private $nomPrenomExtractor;
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Service\Operation\ListJoueurOperation
+     * @var \Caghetti\FFTTApi\Service\Operation\ListJoueurOperation
      */
     private $listJoueurOperation;
     public function __construct(NomPrenomExtractorInterface $nomPrenomExtractor, ListJoueurOperation $listJoueurOperation)
@@ -158,7 +158,7 @@ final class RencontreDetailsFactory
     }
 
     /**
-     * @param array<\Alamirault\FFTTApi\Model\Joueur> $joueursClub
+     * @param array<\Caghetti\FFTTApi\Model\Joueur> $joueursClub
      */
     private function formatJoueur(string $prenom, string $nom, string $points, array $joueursClub): Joueur
     {

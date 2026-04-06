@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace Alamirault\FFTTApi\Service;
+namespace Caghetti\FFTTApi\Service;
 
-use Alamirault\FFTTApi\Exception\InternalServerErrorException;
-use Alamirault\FFTTApi\Exception\InvalidRequestException;
-use Alamirault\FFTTApi\Exception\InvalidResponseException;
+use Caghetti\FFTTApi\Exception\InternalServerErrorException;
+use Caghetti\FFTTApi\Exception\InvalidRequestException;
+use Caghetti\FFTTApi\Exception\InvalidResponseException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
@@ -19,7 +19,7 @@ final class FFTTClient implements FFTTClientInterface
     private $client;
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Service\UriGenerator
+     * @var \Caghetti\FFTTApi\Service\UriGenerator
      */
     private $uriGenerator;
     public function __construct(Client $client, UriGenerator $uriGenerator)

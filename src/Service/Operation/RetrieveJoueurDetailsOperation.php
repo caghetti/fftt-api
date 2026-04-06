@@ -1,14 +1,14 @@
 <?php declare(strict_types=1);
 
-namespace Alamirault\FFTTApi\Service\Operation;
+namespace Caghetti\FFTTApi\Service\Operation;
 
-use Alamirault\FFTTApi\Exception\ClubNotFoundException;
-use Alamirault\FFTTApi\Exception\InternalServerErrorException;
-use Alamirault\FFTTApi\Exception\JoueurNotFoundException;
-use Alamirault\FFTTApi\Model\Enums\NationaliteEnum;
-use Alamirault\FFTTApi\Model\Enums\TypeLicenceEnum;
-use Alamirault\FFTTApi\Model\JoueurDetails;
-use Alamirault\FFTTApi\Service\FFTTClientInterface;
+use Caghetti\FFTTApi\Exception\ClubNotFoundException;
+use Caghetti\FFTTApi\Exception\InternalServerErrorException;
+use Caghetti\FFTTApi\Exception\JoueurNotFoundException;
+use Caghetti\FFTTApi\Model\Enums\NationaliteEnum;
+use Caghetti\FFTTApi\Model\Enums\TypeLicenceEnum;
+use Caghetti\FFTTApi\Model\JoueurDetails;
+use Caghetti\FFTTApi\Service\FFTTClientInterface;
 
 final class RetrieveJoueurDetailsOperation
 {
@@ -16,7 +16,7 @@ final class RetrieveJoueurDetailsOperation
     public const TYPE_CLASSE_NATIONAL = 'N';
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Service\FFTTClientInterface
+     * @var \Caghetti\FFTTApi\Service\FFTTClientInterface
      */
     private $client;
     public function __construct(FFTTClientInterface $client)

@@ -1,6 +1,6 @@
 <?php
 
-namespace Alamirault\FFTTApi\Model\Enums;
+namespace Caghetti\FFTTApi\Model\Enums;
 
 enum TypeLicenceEnum: string
 {

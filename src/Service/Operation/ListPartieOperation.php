@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace Alamirault\FFTTApi\Service\Operation;
+namespace Caghetti\FFTTApi\Service\Operation;
 
-use Alamirault\FFTTApi\Model\Classement;
-use Alamirault\FFTTApi\Model\Partie;
-use Alamirault\FFTTApi\Model\UnvalidatedPartie;
-use Alamirault\FFTTApi\Service\FFTTClientInterface;
-use Alamirault\FFTTApi\Service\NomPrenomExtractorInterface;
+use Caghetti\FFTTApi\Model\Classement;
+use Caghetti\FFTTApi\Model\Partie;
+use Caghetti\FFTTApi\Model\UnvalidatedPartie;
+use Caghetti\FFTTApi\Service\FFTTClientInterface;
+use Caghetti\FFTTApi\Service\NomPrenomExtractorInterface;
 use DateTime;
 
 final class ListPartieOperation
@@ -14,17 +14,17 @@ final class ListPartieOperation
     private const JOUR_DEBUT_MOIS_VIRTUEL = 5;
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Service\FFTTClientInterface
+     * @var \Caghetti\FFTTApi\Service\FFTTClientInterface
      */
     private $client;
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Service\Operation\ArrayWrapper
+     * @var \Caghetti\FFTTApi\Service\Operation\ArrayWrapper
      */
     private $arrayWrapper;
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Service\NomPrenomExtractorInterface
+     * @var \Caghetti\FFTTApi\Service\NomPrenomExtractorInterface
      */
     private $nomPrenomExtractor;
     public function __construct(FFTTClientInterface $client, ArrayWrapper $arrayWrapper, NomPrenomExtractorInterface $nomPrenomExtractor)

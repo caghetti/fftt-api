@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Alamirault\FFTTApi\Model;
+namespace Caghetti\FFTTApi\Model;
 
-use Alamirault\FFTTApi\Model\Enums\NationaliteEnum;
-use Alamirault\FFTTApi\Model\Enums\TypeLicenceEnum;
+use Caghetti\FFTTApi\Model\Enums\NationaliteEnum;
+use Caghetti\FFTTApi\Model\Enums\TypeLicenceEnum;
 
 final class JoueurDetails
 {
@@ -29,7 +29,7 @@ final class JoueurDetails
     private $prenom;
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Model\Enums\TypeLicenceEnum|null
+     * @var \Caghetti\FFTTApi\Model\Enums\TypeLicenceEnum|null
      */
     private $typeLicence;
     /**
@@ -89,7 +89,7 @@ final class JoueurDetails
     private $classementNational;
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Model\Enums\NationaliteEnum|null
+     * @var \Caghetti\FFTTApi\Model\Enums\NationaliteEnum|null
      */
     private $nationalite;
     /**

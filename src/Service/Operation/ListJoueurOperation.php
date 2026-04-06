@@ -1,23 +1,23 @@
 <?php declare(strict_types=1);
 
-namespace Alamirault\FFTTApi\Service\Operation;
+namespace Caghetti\FFTTApi\Service\Operation;
 
 use Accentuation\Accentuation;
-use Alamirault\FFTTApi\Exception\ClubNotFoundException;
-use Alamirault\FFTTApi\Exception\InvalidResponseException;
-use Alamirault\FFTTApi\Model\Joueur;
-use Alamirault\FFTTApi\Service\FFTTClientInterface;
+use Caghetti\FFTTApi\Exception\ClubNotFoundException;
+use Caghetti\FFTTApi\Exception\InvalidResponseException;
+use Caghetti\FFTTApi\Model\Joueur;
+use Caghetti\FFTTApi\Service\FFTTClientInterface;
 
 final class ListJoueurOperation
 {
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Service\FFTTClientInterface
+     * @var \Caghetti\FFTTApi\Service\FFTTClientInterface
      */
     private $client;
     /**
      * @readonly
-     * @var \Alamirault\FFTTApi\Service\Operation\ArrayWrapper
+     * @var \Caghetti\FFTTApi\Service\Operation\ArrayWrapper
      */
     private $arrayWrapper;
     public function __construct(FFTTClientInterface $client, ArrayWrapper $arrayWrapper)
