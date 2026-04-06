@@ -41,9 +41,10 @@ final class ListRencontreOperation
                 /** @var \DateTime|null $dateReelle */
                 $dateReelle = empty($dataRencontre['datereelle']) ? null : \DateTime::createFromFormat('d/m/Y', $dataRencontre['datereelle']);
 
-                $datePrevueParsed = \DateTime::createFromFormat('d/m/Y', $dataRencontre['dateprevue']);
                 /** @var \DateTime|null $datePrevue */
-                $datePrevue = $datePrevueParsed !== false ? $datePrevueParsed : $dateReelle;
+                $datePrevue = !empty($dataRencontre['dateprevue']) && is_string($dataRencontre['dateprevue'])
+                    ? \DateTime::createFromFormat('d/m/Y', $dataRencontre['dateprevue']) ?: $dateReelle
+                    : $dateReelle;
 
                 $result[] = new Rencontre(
                     $dataRencontre['libelle'],
