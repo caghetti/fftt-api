@@ -49,7 +49,14 @@ final class UnvalidatedPartie
      * @var int
      */
     private $adversaireClassement;
-    public function __construct(string $epreuve, string $idPartie, float $coefficientChampionnat, bool $isVictoire, bool $isForfait, \DateTime $date, string $adversaireNom, string $adversairePrenom, int $adversaireClassement)
+    /**
+     * Points issus du champ pointres de l'API (xml_partie), avant application du coefficient championnat.
+     *
+     * @readonly
+     * @var float
+     */
+    private $pointsObtenus;
+    public function __construct(string $epreuve, string $idPartie, float $coefficientChampionnat, bool $isVictoire, bool $isForfait, \DateTime $date, string $adversaireNom, string $adversairePrenom, int $adversaireClassement, float $pointsObtenus = 0.0)
     {
         $this->epreuve = $epreuve;
         $this->idPartie = $idPartie;
@@ -60,6 +67,7 @@ final class UnvalidatedPartie
         $this->adversaireNom = $adversaireNom;
         $this->adversairePrenom = $adversairePrenom;
         $this->adversaireClassement = $adversaireClassement;
+        $this->pointsObtenus = $pointsObtenus;
     }
     public function getEpreuve(): string
     {
@@ -104,5 +112,10 @@ final class UnvalidatedPartie
     public function getAdversaireClassement(): int
     {
         return $this->adversaireClassement;
+    }
+
+    public function getPointsObtenus(): float
+    {
+        return $this->pointsObtenus;
     }
 }

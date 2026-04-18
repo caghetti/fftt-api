@@ -107,4 +107,23 @@ final class RetrieveVirtualPointsOperation
             return new VirtualPoints(0.0, 0.0, 0.0);
         }
     }
+
+    /**
+     * Points officiels (classement) + somme pour les rencontres non validées : pointres × coefchamp.
+     */
+    public function getVirtualPoints(string $licenceId): float
+    {
+        try {
+            $classement = $this->retrieveClassementOperation->retrieveClassement($licenceId);
+            $fromParties = 0.0;
+
+            foreach ($this->listPartieOperation->listUnvalidatedPartiesJoueurByLicence($licenceId) as $partie) {
+                $fromParties += $partie->getPointsObtenus() * $partie->getCoefficientChampionnat();
+            }
+
+            return round($classement->getPoints() + $fromParties, 1);
+        } catch (JoueurNotFoundException $e) {
+            return 0.0;
+        }
+    }
 }

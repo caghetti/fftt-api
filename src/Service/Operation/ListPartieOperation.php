@@ -78,7 +78,7 @@ final class ListPartieOperation
     {
         $validatedParties = $this->listPartiesJoueurByLicence($joueurId);
 
-        /** @var array<array{victoire: string, forfait: string, nom: string, date: string, epreuve: string, idpartie: string, coefchamp: string, classement: string}> $allParties */
+        /** @var array<array{victoire: string, forfait: string, nom: string, date: string, epreuve: string, idpartie: string, coefchamp: string, classement: string, pointres?: string}> $allParties */
         $allParties = $this->client->get('xml_partie', [
             'numlic' => $joueurId,
         ])['partie'] ?? [];
@@ -113,7 +113,8 @@ final class ListPartieOperation
                         $date,
                         $nom,
                         $prenom,
-                        (int) $this->formatPoints($partie['classement'])
+                        (int) $this->formatPoints($partie['classement']),
+                        (float) ($partie['pointres'] ?? '0')
                     );
                 }
             }

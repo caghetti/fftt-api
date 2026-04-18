@@ -227,6 +227,11 @@ final class FFTTApi
         return $this->virtualPointsOperation->retrieveVirtualPoints($licenceId);
     }
 
+    public function getVirtualPoints(string $licenceId): float
+    {
+        return $this->virtualPointsOperation->getVirtualPoints($licenceId);
+    }
+
     /**
      * @return array<Equipe>
      */
